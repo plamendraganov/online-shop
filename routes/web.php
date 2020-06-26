@@ -25,16 +25,20 @@ Route::get('/products', function () {
         public $image;
         public $price;
     }
-    $apple = new Product();
-    $apple->id = 1;
-    $apple->product_name = 'apple';
-    $apple->image= 'https://i5.walmartimages.ca/images/Enlarge/094/514/6000200094514.jpg';
-    $apple->price = 1.6;
-    $orange = new Product();
-    $orange->id = 2;
-    $orange->product_name = 'orange';
-    $orange->image= 'https://www.marlerblog.com/files/2013/03/orange.jpg';
-    $orange->price = 2.4;
+    // $apple = new Product();
+    // $apple->id = 1;
+    // $apple->product_name = 'apple';
+    // $apple->image= 'https://i5.walmartimages.ca/images/Enlarge/094/514/6000200094514.jpg';
+    // $apple->price = 1.6;
+    // $orange = new Product();
+    // $orange->id = 2;
+    // $orange->product_name = 'orange';
+    // $orange->image= 'https://www.marlerblog.com/files/2013/03/orange.jpg';
+    // $orange->price = 2.4;
+    // $products = array($apple, $orange);
+    $apple = (object) ['id' => 1, 'product_name' => 'apple', 'image' => 'https://i5.walmartimages.ca/images/Enlarge/094/514/6000200094514.jpg', 'price' => 1.6];
+    $orange = (object) ['id' => 2, 'product_name' => 'orange', 'image' => 'https://www.marlerblog.com/files/2013/03/orange.jpg', 'price' => 2.4];
+    
     $products = array($apple, $orange);
     return view('products.product_list', ['products' => $products]);
 })->name('products.product_list');
